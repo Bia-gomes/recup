@@ -12,8 +12,8 @@ export default class Api {
         return r.data;
     }
 
-    async inserir(nome) {
-        let r = await api.post('/pessoa', {nome});
+    async inserir(id_nome) {
+        let r = await api.post('/pessoa', {id_nome});
         return r.data;
     }
 }

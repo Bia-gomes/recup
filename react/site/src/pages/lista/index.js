@@ -12,7 +12,7 @@ export default function Lista() {
     const [nome, setNome] = useState('');
 
     async function listar() {  
-        let r = await api.listar();
+        let r = await api.listar(pessoas);
         setPessoas(r);
     }
 

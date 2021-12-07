@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get('/pessoa', async (req, resp) => {
     try{
-        let pessoas = await db.tb_lista_negra.findAll({ order: [['id', 'id_nome']] })
+        let pessoas = await db.tb_lista_negra.findAll({ order: [['id']] })
         resp.send(pessoas);
     } catch (e) {
         resp.send({ erro: e.toString()})
@@ -17,9 +17,7 @@ app.get('/pessoa', async (req, resp) => {
 
 app.post('/pessoa', async (req, resp) => {
     try{
-        let {id_nome} = req.body;
-
-       
+        let {id_nome} = req.body;  
         let r = await db.tb_lista_negra.create({
             id_nome: id_nome
         })
